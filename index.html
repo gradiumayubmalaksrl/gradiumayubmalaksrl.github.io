@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gardiumayoub Malak SARL — Sécurité privée, gardiennage & nettoyage | Kénitra</title>
+<meta name="description" content="Gardiumayoub Malak SARL : sécurité privée, gardiennage, surveillance et nettoyage professionnel à Kénitra, Rabat, Tanger, Marrakech et Casablanca. 24h/24 – 7j/7.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Cinzel:wght@500;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#070d1c; --navy2:#0d1730; --navy3:#14224a;
+  --gold:#d9b24c; --gold2:#f4dc94; --gold3:#a67c1f;
+  --red:#c8102e; --green:#0b9a62;
+  --txt:#e9edf7; --mut:#9aa7c4;
+  --r:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins','Cairo',sans-serif;background:var(--navy);color:var(--txt);overflow-x:hidden;line-height:1.65}
+html[dir=rtl] body{font-family:'Cairo','Poppins',sans-serif}
+a{color:inherit;text-decoration:none}
+img,video{max-width:100%;display:block}
+.gold-text{background:linear-gradient(120deg,var(--gold3),var(--gold2),var(--gold),var(--gold2),var(--gold3));background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:220% center}}
+.wrap{width:min(1180px,92%);margin-inline:auto}
+section{padding:96px 0;position:relative}
+h2.title{font-family:'Cinzel','Cairo',serif;font-size:clamp(1.8rem,4vw,2.8rem);text-align:center;font-weight:700;letter-spacing:1px}
+.sub{text-align:center;color:var(--mut);max-width:640px;margin:14px auto 54px}
+.line{width:90px;height:3px;margin:16px auto 0;background:linear-gradient(90deg,var(--red),var(--gold),var(--green));border-radius:3px}
+
+/* background */
+#bgcanvas{position:fixed;inset:0;z-index:-2;width:100%;height:100%}
+.bgglow{position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(circle at 15% 10%,rgba(200,16,46,.18),transparent 45%),
+             radial-gradient(circle at 85% 30%,rgba(11,154,98,.16),transparent 45%),
+             radial-gradient(circle at 50% 100%,rgba(217,178,76,.12),transparent 50%)}
+
+/* header */
+header{position:fixed;top:0;inset-inline:0;z-index:50;transition:.35s}
+header.sc{background:rgba(7,13,28,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(217,178,76,.25)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:14px}
+.brand{display:flex;align-items:center;gap:12px;font-family:'Cinzel',serif;font-weight:700;font-size:1rem;letter-spacing:1px}
+.brand svg{width:44px;height:50px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.6))}
+.brand small{display:block;font-family:'Poppins',sans-serif;font-size:.62rem;color:var(--gold);letter-spacing:2px;font-weight:400}
+nav ul{display:flex;gap:26px;list-style:none}
+nav a{font-size:.9rem;color:var(--txt);position:relative;padding:4px 0}
+nav a::after{content:"";position:absolute;bottom:-2px;inset-inline-start:0;width:0;height:2px;background:var(--gold);transition:.3s}
+nav a:hover::after{width:100%}
+.langs{display:flex;gap:6px}
+.langs button{width:36px;height:26px;border-radius:6px;border:2px solid transparent;background:#fff1;cursor:pointer;font-size:1.05rem;line-height:1;transition:.25s}
+.langs button.on,.langs button:hover{border-color:var(--gold);transform:translateY(-2px)}
+.burger{display:none;background:none;border:0;color:var(--gold);font-size:1.8rem;cursor:pointer}
+
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:110px;padding-bottom:60px}
+.hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center}
+.badge{display:inline-flex;gap:8px;align-items:center;padding:7px 18px;border:1px solid var(--gold);border-radius:99px;color:var(--gold2);font-size:.82rem;background:rgba(217,178,76,.08);letter-spacing:1px}
+.badge i{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 var(--green);animation:pulse 1.8s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 12px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.hero h1{font-family:'Cinzel','Cairo',serif;font-size:clamp(2.2rem,5.2vw,4.1rem);line-height:1.15;margin:22px 0 18px;font-weight:900}
+.hero p{color:var(--mut);font-size:1.08rem;max-width:560px}
+.btns{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:99px;font-weight:600;border:0;cursor:pointer;font-size:.98rem;transition:.3s;font-family:inherit;position:relative;overflow:hidden}
+.btn.g{background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));color:#1a1306;box-shadow:0 10px 30px rgba(217,178,76,.35)}
+.btn.o{background:transparent;color:var(--gold2);border:1.5px solid var(--gold)}
+.btn:hover{transform:translateY(-4px) scale(1.03)}
+.btn.g::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(100deg,transparent,#fff8,transparent);transform:skewX(-20deg);animation:sweep 3.5s infinite}
+@keyframes sweep{to{left:140%}}
+.stage{position:relative;height:min(560px,70vw)}
+#shield3d{width:100%;height:100%;display:block}
+.fallback{display:none;position:absolute;inset:0;align-items:center;justify-content:center;pointer-events:none}
+.fallback img{max-width:68%;max-height:84%;object-fit:contain;border:4px solid var(--gold);border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.65),0 0 40px rgba(217,178,76,.3);animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-16px)}}
+.scroll{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);width:26px;height:44px;border:2px solid var(--gold);border-radius:20px}
+.scroll::after{content:"";position:absolute;top:8px;left:50%;width:4px;height:8px;margin-left:-2px;background:var(--gold);border-radius:4px;animation:sc 1.8s infinite}
+@keyframes sc{60%{transform:translateY(16px);opacity:0}}
+
+/* stats */
+.stats{padding:0;margin-top:-30px;z-index:3}
+.stats .row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.stat{background:linear-gradient(160deg,rgba(20,34,74,.9),rgba(9,16,36,.9));border:1px solid rgba(217,178,76,.3);border-radius:var(--r);text-align:center;padding:26px 10px;box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.stat b{display:block;font-family:'Cinzel',serif;font-size:2.3rem}
+.stat span{color:var(--mut);font-size:.88rem}
+
+/* services */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;perspective:1200px}
+.card{position:relative;padding:34px 28px;border-radius:var(--r);background:linear-gradient(155deg,rgba(24,40,86,.85),rgba(9,16,36,.92));border:1px solid rgba(217,178,76,.22);transform-style:preserve-3d;transition:transform .15s ease-out,border-color .3s,box-shadow .3s;will-change:transform}
+.card:hover{border-color:var(--gold);box-shadow:0 30px 60px rgba(0,0,0,.55),0 0 40px rgba(217,178,76,.18)}
+.card .ic{width:72px;height:72px;border-radius:20px;display:grid;place-items:center;font-size:2rem;margin-bottom:20px;background:linear-gradient(135deg,rgba(200,16,46,.35),rgba(11,154,98,.35));border:1px solid var(--gold);transform:translateZ(50px);box-shadow:0 12px 28px rgba(0,0,0,.5)}
+.card h3{font-size:1.2rem;color:var(--gold2);margin-bottom:8px;transform:translateZ(30px)}
+.card p{color:var(--mut);font-size:.93rem;transform:translateZ(18px)}
+.card .no{position:absolute;top:14px;inset-inline-end:20px;font-family:'Cinzel',serif;font-size:3.2rem;color:rgba(217,178,76,.09);font-weight:900}
+
+/* about */
+.about .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about h2{text-align:start}
+.about .line{margin-inline:0}
+.about p{color:var(--mut);margin:20px 0}
+.checks{list-style:none;display:grid;gap:12px}
+.checks li{display:flex;gap:12px;align-items:center;padding:12px 16px;border-radius:14px;background:#ffffff08;border:1px solid rgba(217,178,76,.18)}
+.checks li::before{content:"✔";color:#1a1306;background:var(--gold);width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;flex:none}
+.cubebox{height:380px;display:grid;place-items:center;perspective:900px}
+.cube{width:170px;height:170px;position:relative;transform-style:preserve-3d;animation:spin 16s linear infinite}
+.cube div{position:absolute;inset:0;display:grid;place-items:center;font-size:3.6rem;border:2px solid var(--gold);background:linear-gradient(135deg,rgba(200,16,46,.45),rgba(13,23,48,.85) 50%,rgba(11,154,98,.45));box-shadow:inset 0 0 40px rgba(217,178,76,.25)}
+.cube div:nth-child(1){transform:translateZ(85px)}
+.cube div:nth-child(2){transform:rotateY(90deg) translateZ(85px)}
+.cube div:nth-child(3){transform:rotateY(180deg) translateZ(85px)}
+.cube div:nth-child(4){transform:rotateY(-90deg) translateZ(85px)}
+.cube div:nth-child(5){transform:rotateX(90deg) translateZ(85px)}
+.cube div:nth-child(6){transform:rotateX(-90deg) translateZ(85px)}
+@keyframes spin{from{transform:rotateX(-20deg) rotateY(0)}to{transform:rotateX(-20deg) rotateY(360deg)}}
+
+/* zones */
+.zones{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;perspective:1000px}
+.zone{text-align:center;padding:30px 12px;border-radius:var(--r);border:1px solid rgba(217,178,76,.25);background:linear-gradient(180deg,rgba(20,34,74,.7),rgba(7,13,28,.9));transition:.4s;transform-style:preserve-3d}
+.zone:hover{transform:rotateX(10deg) translateY(-10px);border-color:var(--gold);box-shadow:0 24px 40px rgba(0,0,0,.5)}
+.zone .pin{font-size:2rem;display:block;margin-bottom:6px}
+.zone b{font-family:'Cinzel',serif;color:var(--gold2);display:block}
+.zone span{color:var(--mut);font-size:.9rem}
+
+/* hours */
+.hours{max-width:620px;margin:0 auto;border-radius:var(--r);overflow:hidden;border:1px solid rgba(217,178,76,.35);background:rgba(13,23,48,.8)}
+.hours .hd{background:linear-gradient(135deg,var(--red),#7a0a1c 45%,#06603f 55%,var(--green));padding:18px;text-align:center;font-weight:600;letter-spacing:1px}
+.hours .r{display:flex;justify-content:space-between;padding:13px 26px;border-bottom:1px solid #ffffff10}
+.hours .r:last-child{border:0}
+.hours .r em{font-style:normal;color:var(--gold2)}
+.hours .r.today{background:rgba(217,178,76,.12)}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.slot{aspect-ratio:4/3;border-radius:var(--r);border:2px dashed rgba(217,178,76,.45);display:grid;place-items:center;text-align:center;color:var(--mut);background:linear-gradient(135deg,rgba(200,16,46,.08),rgba(11,154,98,.08));position:relative;overflow:hidden;transition:.35s}
+.slot:hover{transform:translateY(-6px) scale(1.02);border-color:var(--gold)}
+.slot .ph{font-size:2.6rem;display:block}
+.slot img,.slot video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.slot.has{border-style:solid}
+.slot.wide{grid-column:span 2;aspect-ratio:auto}
+
+/* contact */
+.contact .grid{display:grid;grid-template-columns:1fr 1.1fr;gap:34px}
+.panel{padding:34px;border-radius:var(--r);background:linear-gradient(155deg,rgba(24,40,86,.8),rgba(9,16,36,.92));border:1px solid rgba(217,178,76,.28)}
+.info{display:grid;gap:18px;margin-bottom:22px}
+.info a,.info div{display:flex;gap:14px;align-items:center}
+.info .i{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:1.3rem;background:rgba(217,178,76,.12);border:1px solid var(--gold);flex:none}
+.map{border-radius:16px;overflow:hidden;border:1px solid var(--gold);height:230px}
+.map iframe{width:100%;height:100%;border:0;filter:invert(.9) hue-rotate(180deg) contrast(.9)}
+form{display:grid;gap:14px}
+label{font-size:.85rem;color:var(--gold2)}
+input,select,textarea{width:100%;padding:14px 16px;border-radius:12px;border:1px solid rgba(217,178,76,.3);background:rgba(7,13,28,.8);color:var(--txt);font:inherit;outline:0;transition:.25s}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(217,178,76,.18)}
+textarea{min-height:110px;resize:vertical}
+select option{background:#0d1730}
+
+
+/* galería avanzada */
+#gal{grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:16px;perspective:1200px}
+.pf{position:relative;overflow:hidden;border-radius:18px;border:1px solid rgba(217,178,76,.35);cursor:zoom-in;transform-style:preserve-3d;transition:transform .2s ease-out,box-shadow .3s,border-color .3s;background:#0d1730;margin:0}
+.pf.b{grid-column:span 2;grid-row:span 2}
+.pf.w{grid-column:span 2}
+#gal .slot.wide{grid-column:1/-1;min-height:200px}
+#gal .slot{aspect-ratio:auto}
+.pf img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.pf:hover{border-color:var(--gold);box-shadow:0 26px 50px rgba(0,0,0,.6),0 0 36px rgba(217,178,76,.25)}
+.pf:hover img{transform:scale(1.12)}
+.pf::after{content:"🔍";position:absolute;inset:0;display:grid;place-items:end center;padding-bottom:16px;font-size:1.8rem;background:linear-gradient(180deg,transparent 45%,rgba(7,13,28,.88));opacity:0;transition:.4s;pointer-events:none}
+.pf:hover::after{opacity:1}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(4,8,18,.94);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;flex-direction:column;gap:14px}
+.lb.open{display:flex;animation:pop .3s}
+.lb img{max-width:92vw;max-height:80vh;border-radius:14px;border:3px solid var(--gold);box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 60px rgba(217,178,76,.25);object-fit:contain}
+.lb button{position:absolute;background:rgba(217,178,76,.15);border:1px solid var(--gold);color:var(--gold2);width:48px;height:48px;border-radius:50%;font-size:1.4rem;cursor:pointer;transition:.25s}
+.lb button:hover{background:var(--gold);color:#1a1306}
+.lb .x{top:20px;right:20px}.lb .pv{left:16px;top:50%}.lb .nx{right:16px;top:50%}
+.lb .cn{color:var(--gold2);font-size:.9rem;letter-spacing:2px}
+@media(max-width:900px){#gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}}
+
+
+/* reseñas */
+.rvgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;perspective:1200px}
+.rvc{position:relative;padding:30px 26px;border-radius:var(--r);background:linear-gradient(155deg,rgba(24,40,86,.85),rgba(9,16,36,.92));border:1px solid rgba(217,178,76,.3);transform-style:preserve-3d;transition:transform .15s ease-out,border-color .3s,box-shadow .3s;min-height:220px;display:flex;flex-direction:column;gap:12px}
+.rvc:hover{border-color:var(--gold);box-shadow:0 28px 55px rgba(0,0,0,.55),0 0 36px rgba(217,178,76,.18)}
+.rvc .q{position:absolute;top:8px;inset-inline-end:20px;font-family:'Cinzel',serif;font-size:4.4rem;color:rgba(217,178,76,.12);line-height:1}
+.rvc .st{color:var(--gold);letter-spacing:3px;font-size:1.15rem;transform:translateZ(30px)}
+.rvc p{color:var(--txt);font-size:.95rem;flex:1;transform:translateZ(16px)}
+.rvc .who{display:flex;align-items:center;gap:12px;transform:translateZ(24px)}
+.rvc .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:#1a1306;background:linear-gradient(135deg,var(--gold3),var(--gold2))}
+.rvc small{color:var(--mut)}
+.rvc.empty{border-style:dashed;border-color:rgba(217,178,76,.4);align-items:center;justify-content:center;text-align:center;color:var(--mut)}
+.rvc.empty .st{opacity:.35}
+.rvform{max-width:560px;margin:46px auto 0;padding:30px;border-radius:var(--r);background:linear-gradient(155deg,rgba(24,40,86,.8),rgba(9,16,36,.92));border:1px solid rgba(217,178,76,.3);display:grid;gap:14px}
+.rvform h3{text-align:center;color:var(--gold2)}
+.stars{display:flex;justify-content:center;gap:6px;direction:ltr}
+.stars button{background:none;border:0;font-size:2rem;color:#ffffff30;cursor:pointer;transition:.2s}
+.stars button.on{color:var(--gold);transform:scale(1.08)}
+@media(max-width:980px){.rvgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.rvgrid{grid-template-columns:1fr}}
+
+.rvc.cm{min-height:190px;gap:8px}
+.rvc.cm .q{font-size:3.4rem}
+.rvc.cm .ic{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;font-size:1.6rem;background:linear-gradient(135deg,rgba(200,16,46,.35),rgba(11,154,98,.35));border:1px solid var(--gold);transform:translateZ(40px);box-shadow:0 10px 22px rgba(0,0,0,.5)}
+.rvc.cm h3{color:var(--gold2);font-size:1.1rem;transform:translateZ(28px)}
+
+footer{padding:34px 0 110px;text-align:center;color:var(--mut);border-top:1px solid rgba(217,178,76,.2);font-size:.88rem}
+footer b{color:var(--gold2)}
+
+/* floating */
+.fl{position:fixed;z-index:60;display:flex;flex-direction:column;gap:12px;bottom:20px;left:18px}
+.fl a{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:1.6rem;color:#fff;box-shadow:0 10px 26px rgba(0,0,0,.55);transition:.3s;position:relative}
+.fl a:hover{transform:scale(1.14) rotate(-6deg)}
+.fl .wa{background:#25d366}.fl .tel{background:var(--red)}.fl .gps{background:#2a6df4}
+.fl .wa::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25d366;animation:ring 2s infinite}
+@keyframes ring{to{transform:scale(1.7);opacity:0}}
+.bot{position:fixed;z-index:61;bottom:20px;right:18px}
+.bot>button{width:62px;height:62px;border-radius:50%;border:2px solid var(--gold);background:linear-gradient(135deg,var(--navy3),var(--navy));color:var(--gold2);font-size:1.8rem;cursor:pointer;box-shadow:0 10px 28px rgba(0,0,0,.6);transition:.3s}
+.bot>button:hover{transform:scale(1.1)}
+.chat{position:absolute;bottom:76px;right:0;width:min(340px,86vw);border-radius:18px;overflow:hidden;border:1px solid var(--gold);background:#0b1328;box-shadow:0 24px 60px rgba(0,0,0,.7);display:none;direction:ltr}
+html[dir=rtl] .chat{direction:rtl}
+.chat.open{display:block;animation:pop .3s}
+@keyframes pop{from{transform:translateY(14px) scale(.96);opacity:0}}
+.chat .h{padding:14px 18px;background:linear-gradient(135deg,var(--red),#5b0a1a 45%,#075c3d 55%,var(--green));font-weight:600}
+.chat .b{max-height:260px;overflow:auto;padding:14px;display:grid;gap:8px}
+.msg{padding:9px 13px;border-radius:14px;font-size:.88rem;max-width:88%}
+.msg.bot{background:#ffffff12;justify-self:start;position:static}
+.msg.me{background:var(--gold);color:#1a1306;justify-self:end}
+.qs{padding:10px 14px 14px;display:flex;flex-wrap:wrap;gap:7px;border-top:1px solid #ffffff12}
+.qs button{padding:7px 12px;border-radius:99px;border:1px solid var(--gold);background:transparent;color:var(--gold2);font:inherit;font-size:.78rem;cursor:pointer}
+.qs button:hover{background:var(--gold);color:#1a1306}
+
+.rv{opacity:0;transform:translateY(40px) scale(.97);transition:1s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:980px){
+  .hero .grid,.about .grid,.contact .grid{grid-template-columns:1fr}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .zones{grid-template-columns:repeat(3,1fr)}
+  .stats .row{grid-template-columns:repeat(2,1fr)}
+  .stage{height:380px;order:-1}
+  nav{position:fixed;top:0;inset-inline-end:-100%;width:78%;height:100vh;background:rgba(7,13,28,.97);padding:90px 30px;transition:.4s;border-inline-start:1px solid var(--gold)}
+  nav.open{inset-inline-end:0}
+  nav ul{flex-direction:column;gap:22px}
+  .burger{display:block;z-index:70}
+  .hero{text-align:center}.hero p{margin-inline:auto}.btns{justify-content:center}
+  .about h2{text-align:center}.about .line{margin-inline:auto}
+}
+@media(max-width:620px){
+  section{padding:70px 0}
+  .cards,.gal{grid-template-columns:1fr}
+  .zones{grid-template-columns:repeat(2,1fr)}
+  .slot.wide{grid-column:auto}
+  .brand span.t{display:none}
+  .langs button{width:30px}
+  .fl a{width:50px;height:50px}
+}
+</style>
+</head>
+<body>
+<canvas id="bgcanvas"></canvas>
+<div class="bgglow"></div>
+
+<!-- SVG logo (shield) -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4dc94"/><stop offset=".5" stop-color="#d9b24c"/><stop offset="1" stop-color="#a67c1f"/></linearGradient>
+    <symbol id="logo" viewBox="0 0 100 114">
+      <path d="M50 4 6 18v38c0 28 18 44 44 54 26-10 44-26 44-54V18z" fill="url(#gg)"/>
+      <path d="M50 10 12 22v33c0 24 15 38 38 47V10z" fill="#c8102e"/>
+      <path d="M50 10l38 12v33c0 24-15 38-38 47V10z" fill="#0b9a62"/>
+      <circle cx="50" cy="52" r="22" fill="none" stroke="#070d1c" stroke-width="5"/>
+      <text x="50" y="62" text-anchor="middle" font-family="Cinzel,serif" font-weight="900" font-size="28" fill="#f4dc94">GM</text>
+    </symbol>
+  </defs>
+</svg>
+
+<header id="hd">
+  <div class="wrap nav">
+    <a href="#home" class="brand"><svg><use href="#logo"/></svg><span class="t">GARDIUMAYOUB MALAK<small>SARL</small></span></a>
+    <nav id="nav">
+      <ul>
+        <li><a href="#home" data-i="nav_home"></a></li>
+        <li><a href="#services" data-i="nav_services"></a></li>
+        <li><a href="#about" data-i="nav_about"></a></li>
+        <li><a href="#zones" data-i="nav_zones"></a></li>
+        <li><a href="#gallery" data-i="nav_gallery"></a></li>
+        <li><a href="#reviews" data-i="nav_reviews"></a></li>
+        <li><a href="#contact" data-i="nav_contact"></a></li>
+      </ul>
+    </nav>
+    <div class="langs" id="langs">
+      <button data-l="ar" title="العربية">🇲🇦</button>
+      <button data-l="fr" title="Français">🇫🇷</button>
+      <button data-l="en" title="English">🇬🇧</button>
+      <button data-l="es" title="Español">🇪🇸</button>
+      <button data-l="it" title="Italiano">🇮🇹</button>
+    </div>
+    <button class="burger" id="burger" aria-label="menu">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="wrap grid">
+    <div>
+      <span class="badge"><i></i><span data-i="hero_badge"></span></span>
+      <h1><span class="gold-text" data-i="hero_t1"></span><br><span data-i="hero_t2"></span></h1>
+      <p data-i="hero_sub"></p>
+      <div class="btns">
+        <a class="btn g" href="#contact">📝 <span data-i="cta_quote"></span></a>
+        <a class="btn o" href="tel:+212666082482">📞 <span data-i="cta_call"></span></a>
+      </div>
+    </div>
+    <div class="stage">
+      <canvas id="shield3d"></canvas>
+      <div class="fallback" id="fb"><img src="https://i.imgur.com/VswKYKE.jpeg" alt="Gardiumayoub Malak SARL"></div>
+    </div>
+  </div>
+  <div class="scroll"></div>
+</section>
+
+<section class="stats">
+  <div class="wrap row">
+    <div class="stat rv"><b class="gold-text">24/7</b><span data-i="s1"></span></div>
+    <div class="stat rv"><b class="gold-text" data-count="5">0</b><span data-i="s2"></span></div>
+    <div class="stat rv"><b class="gold-text" data-count="6">0</b><span data-i="s3"></span></div>
+    <div class="stat rv"><b class="gold-text">0 DH</b><span data-i="s4"></span></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <h2 class="title gold-text rv" data-i="sv_title"></h2><div class="line"></div>
+    <p class="sub rv" data-i="sv_sub"></p>
+    <div class="cards">
+      <article class="card rv"><span class="no">01</span><div class="ic">🛡️</div><h3 data-i="sv1t"></h3><p data-i="sv1d"></p></article>
+      <article class="card rv"><span class="no">02</span><div class="ic">📹</div><h3 data-i="sv2t"></h3><p data-i="sv2d"></p></article>
+      <article class="card rv"><span class="no">03</span><div class="ic">🎟️</div><h3 data-i="sv3t"></h3><p data-i="sv3d"></p></article>
+      <article class="card rv"><span class="no">04</span><div class="ic">🧹</div><h3 data-i="sv4t"></h3><p data-i="sv4d"></p></article>
+      <article class="card rv"><span class="no">05</span><div class="ic">🏢</div><h3 data-i="sv5t"></h3><p data-i="sv5d"></p></article>
+      <article class="card rv"><span class="no">06</span><div class="ic">🧴</div><h3 data-i="sv6t"></h3><p data-i="sv6d"></p></article>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="wrap grid">
+    <div class="rv">
+      <h2 class="title gold-text" data-i="ab_title"></h2><div class="line"></div>
+      <p data-i="ab_text"></p>
+      <ul class="checks">
+        <li data-i="ab1"></li><li data-i="ab2"></li><li data-i="ab3"></li><li data-i="ab4"></li>
+      </ul>
+    </div>
+    <div class="cubebox rv">
+      <div class="cube"><div>🛡️</div><div>🧹</div><div>📹</div><div>🏢</div><div>🔒</div><div>✨</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="zones">
+  <div class="wrap">
+    <h2 class="title gold-text rv" data-i="zn_title"></h2><div class="line"></div>
+    <p class="sub rv" data-i="zn_sub"></p>
+    <div class="zones">
+      <div class="zone rv"><span class="pin">📍</span><b>Kénitra</b><span>القنيطرة</span></div>
+      <div class="zone rv"><span class="pin">📍</span><b>Rabat</b><span>الرباط</span></div>
+      <div class="zone rv"><span class="pin">📍</span><b>Tanger</b><span>طنجة</span></div>
+      <div class="zone rv"><span class="pin">📍</span><b>Marrakech</b><span>مراكش</span></div>
+      <div class="zone rv"><span class="pin">📍</span><b>Casablanca</b><span>الدار البيضاء</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="hours">
+  <div class="wrap">
+    <h2 class="title gold-text rv" data-i="hr_title"></h2><div class="line"></div>
+    <p class="sub rv" data-i="hr_sub"></p>
+    <div class="hours rv" id="hoursBox"><div class="hd" data-i="hr_head"></div></div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <h2 class="title gold-text rv" data-i="gl_title"></h2><div class="line"></div>
+    <p class="sub rv" data-i="gl_sub"></p>
+    <!-- Fotos: cambia el src de cada <img>. Vídeo: pon la ruta en data-src del hueco de vídeo. -->
+    <div class="gal" id="gal">
+      <figure class="pf rv b"><img src="https://i.imgur.com/cMhC1BH.jpeg" alt="Gardiumayoub Malak SARL" loading="lazy" onerror="this.parentElement.style.display='none'"></figure>
+      <figure class="pf rv "><img src="https://i.imgur.com/lX3F4D2.png" alt="Gardiumayoub Malak SARL" loading="lazy" onerror="this.parentElement.style.display='none'"></figure>
+      <figure class="pf rv "><img src="https://i.imgur.com/ZbZOcbg.png" alt="Gardiumayoub Malak SARL" loading="lazy" onerror="this.parentElement.style.display='none'"></figure>
+      <figure class="pf rv "><img src="https://i.imgur.com/fman6G0.png" alt="Gardiumayoub Malak SARL" loading="lazy" onerror="this.parentElement.style.display='none'"></figure>
+      <figure class="pf rv "><img src="https://i.imgur.com/R1ctmQW.png" alt="Gardiumayoub Malak SARL" loading="lazy" onerror="this.parentElement.style.display='none'"></figure>
+      <figure class="pf rv w"><img src="https://i.imgur.com/Jq2iwHf.jpeg" alt="Gardiumayoub Malak SARL" loading="lazy" onerror="this.parentElement.style.display='none'"></figure>
+      <figure class="pf rv"><img src="https://i.imgur.com/RJvy8yB.jpeg" alt="Gardiumayoub Malak SARL" loading="lazy" onerror="this.parentElement.style.display='none'"></figure>
+      <figure class="pf rv"><img src="https://i.imgur.com/gqwtP7Y.png" alt="Gardiumayoub Malak SARL" loading="lazy" onerror="this.parentElement.style.display='none'"></figure>
+      <div class="slot rv wide" data-src="" data-type="video"><div><span class="ph">🎬</span><span data-i="gl_soon"></span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="commitments">
+  <div class="wrap">
+    <h2 class="title gold-text rv" data-i="cm_title"></h2><div class="line"></div>
+    <p class="sub rv" data-i="cm_sub"></p>
+    <div class="rvgrid" id="cmgrid">
+      <article class="rvc cm rv"><span class="q">01</span><div class="ic">🕐</div><h3 data-i="c1t"></h3><p data-i="c1d"></p></article>
+      <article class="rvc cm rv"><span class="q">02</span><div class="ic">🛡️</div><h3 data-i="c2t"></h3><p data-i="c2d"></p></article>
+      <article class="rvc cm rv"><span class="q">03</span><div class="ic">⚡</div><h3 data-i="c3t"></h3><p data-i="c3d"></p></article>
+      <article class="rvc cm rv"><span class="q">04</span><div class="ic">🧾</div><h3 data-i="c4t"></h3><p data-i="c4d"></p></article>
+      <article class="rvc cm rv"><span class="q">05</span><div class="ic">🤝</div><h3 data-i="c5t"></h3><p data-i="c5d"></p></article>
+      <article class="rvc cm rv"><span class="q">06</span><div class="ic">📍</div><h3 data-i="c6t"></h3><p data-i="c6d"></p></article>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <h2 class="title gold-text rv" data-i="rv_title"></h2><div class="line"></div>
+    <p class="sub rv" data-i="rv_sub"></p>
+    <div class="rvgrid" id="rvgrid"></div>
+    <form class="rvform rv" id="rvform">
+      <h3 data-i="rv_form"></h3>
+      <div class="stars" id="rvstars" role="radiogroup"></div>
+      <input id="rn" data-ph="rv_name" required>
+      <textarea id="rt" data-ph="rv_text" required></textarea>
+      <button class="btn g" type="submit">💬 <span data-i="rv_send"></span></button>
+    </form>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2 class="title gold-text rv" data-i="ct_title"></h2><div class="line"></div>
+    <p class="sub rv" data-i="ct_sub"></p>
+    <div class="grid">
+      <div class="panel rv">
+        <div class="info">
+          <a href="tel:+212666082482"><span class="i">📞</span><div><b>+212 6 66 08 24 82</b><br><small data-i="ct_tel"></small></div></a>
+          <a href="https://wa.me/212666082482" target="_blank" rel="noopener"><span class="i">💬</span><div><b>WhatsApp</b><br><small>wa.me/212666082482</small></div></a>
+          <div><span class="i">📍</span><div><b data-i="ct_addr"></b><br><small>287 Bloc K, Apt 2, Étage 1, Ouled Oujih, Kénitra 14000</small></div></div>
+          <div><span class="i">🕐</span><div><b>24h/24 · 7j/7</b></div></div>
+        </div>
+        <div class="map"><iframe loading="lazy" title="map" src="https://maps.google.com/maps?q=287%20Ouled%20Oujih%20K%C3%A9nitra%2014000%20Maroc&output=embed"></iframe></div>
+      </div>
+      <div class="panel rv">
+        <form id="form">
+          <div><label data-i="f_name"></label><input id="fn" required></div>
+          <div><label data-i="f_phone"></label><input id="fp" type="tel" required></div>
+          <div><label data-i="f_service"></label>
+            <select id="fs">
+              <option data-i="sv1t"></option><option data-i="sv2t"></option><option data-i="sv3t"></option>
+              <option data-i="sv4t"></option><option data-i="sv5t"></option><option data-i="sv6t"></option>
+            </select></div>
+          <div><label data-i="f_msg"></label><textarea id="fm"></textarea></div>
+          <button class="btn g" type="submit">💬 <span data-i="f_send"></span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Gardiumayoub Malak SARL</b> — Sécurité privée · Gardiennage · Nettoyage & Désinfection professionnelle</p>
+    <p>© 2025 · <span data-i="ft"></span></p>
+  </div>
+</footer>
+
+<div class="lb" id="lb"><button class="x" aria-label="close">✕</button><button class="pv">‹</button><img id="lbi" alt=""><button class="nx">›</button><div class="cn" id="lbc"></div></div>
+<!-- floating buttons -->
+<div class="fl">
+  <a class="wa" href="https://wa.me/212666082482" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+  <a class="tel" href="tel:+212666082482" aria-label="Call">📞</a>
+  <a class="gps" href="https://www.google.com/maps/search/?api=1&query=287+Ouled+Oujih+K%C3%A9nitra+14000+Maroc" target="_blank" rel="noopener" aria-label="GPS">📍</a>
+</div>
+
+<!-- FAQ assistant -->
+<div class="bot">
+  <div class="chat" id="chat">
+    <div class="h">🛡️ <span data-i="fq_title"></span></div>
+    <div class="b" id="cb"></div>
+    <div class="qs" id="qs"></div>
+  </div>
+  <button id="botbtn" aria-label="FAQ">🤖</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ================= TRADUCCIONES ================= */
+const T={
+fr:{nav_home:"Accueil",nav_services:"Services",nav_about:"À propos",nav_zones:"Zones",nav_gallery:"Galerie",nav_contact:"Contact",
+hero_badge:"Disponibles 24h/24 – 7j/7",hero_t1:"Sécurité & Nettoyage",hero_t2:"Professionnels",
+hero_sub:"Agence de référence en sécurité privée, gardiennage et surveillance à Kénitra et dans tout le Maroc. Protection globale de vos locaux, chantiers, résidences et événements.",
+cta_quote:"Devis gratuit",cta_call:"Appelez-nous",s1:"Agents disponibles",s2:"Villes couvertes",s3:"Services",s4:"Devis gratuit",
+sv_title:"Nos Prestations",sv_sub:"Des agents qualifiés et un service sur-mesure pour une réactivité maximale.",
+sv1t:"Gardiennage & sécurité physique",sv1d:"Agents qualifiés présents 24h/24 et 7j/7 pour protéger vos locaux et vos biens.",
+sv2t:"Surveillance",sv2d:"Surveillance de chantiers, d'entreprises et de résidences, avec rondes et rapports.",
+sv3t:"Sécurité événementielle",sv3d:"Protection et gestion des accès pour vos événements, mariages et conférences.",
+sv4t:"Nettoyage professionnel",sv4d:"Nettoyage de bureaux, immeubles et espaces professionnels avec du matériel adapté.",
+sv5t:"Entretien",sv5d:"Entretien régulier de maisons, résidences et copropriétés.",
+sv6t:"Désinfection",sv6d:"Désinfection et lutte contre les virus pour un environnement sûr et propre.",
+ab_title:"Pourquoi nous choisir",ab_text:"Gardiumayoub Malak SARL assure la protection globale de vos intérêts grâce à des agents qualifiés et disponibles à tout moment. Bénéficiez d'une réactivité maximale et d'un service sur-mesure.",
+ab1:"Agents qualifiés et formés",ab2:"Disponibilité 24h/24 – 7j/7",ab3:"Service sur-mesure",ab4:"Devis gratuit et rapide",
+zn_title:"Zones d'intervention",zn_sub:"Nous intervenons dans les grandes villes du Maroc.",
+hr_title:"Horaires",hr_sub:"Une équipe toujours prête, jour et nuit.",hr_head:"Ouvert 24h/24",
+gl_title:"Galerie",gl_sub:"Nos équipes en action sur le terrain.",gl_soon:"Photo / vidéo bientôt",
+ct_title:"Contactez-nous",ct_sub:"Demandez votre devis gratuit dès aujourd'hui.",ct_tel:"Téléphone / WhatsApp",ct_addr:"Adresse",
+f_name:"Nom complet",f_phone:"Téléphone",f_service:"Service souhaité",f_msg:"Message",f_send:"Envoyer sur WhatsApp",
+fq_title:"Assistant",fq_hello:"Bonjour ! Posez-moi une question :",
+q1:"Horaires ?",a1:"Nous sommes ouverts 24h/24 et 7j/7, tous les jours.",
+q2:"Zones couvertes ?",a2:"Kénitra, Rabat, Tanger, Marrakech et Casablanca.",
+q3:"Devis ?",a3:"Le devis est gratuit. Écrivez-nous sur WhatsApp au +212 6 66 08 24 82.",
+q4:"Services ?",a4:"Gardiennage, surveillance, sécurité événementielle, nettoyage, entretien et désinfection.",
+cm_title:"Nos engagements",cm_sub:"Ce que vous pouvez attendre de nous, chaque jour.",c1t:"Disponibles 24h/24 – 7j/7",c1d:"Une équipe prête à intervenir de jour comme de nuit.",c2t:"Agents qualifiés",c2d:"Des agents formés pour protéger vos locaux, chantiers et résidences.",c3t:"Réactivité maximale",c3d:"Une intervention rapide dès que vous en avez besoin.",c4t:"Devis gratuit",c4d:"Contactez-nous aujourd'hui, sans engagement.",c5t:"Service sur-mesure",c5d:"Des prestations adaptées à votre site et à vos besoins.",c6t:"Partout au Maroc",c6d:"Kénitra, Rabat, Tanger, Marrakech et Casablanca.",nav_reviews:"Avis",rv_title:"Avis de nos clients",rv_sub:"La confiance de nos clients est notre meilleure sécurité.",rv_empty:"Avis client à venir",rv_form:"Laissez votre avis",rv_name:"Votre nom",rv_text:"Votre avis",rv_send:"Envoyer mon avis",ft:"Tous droits réservés."},
+ar:{nav_home:"الرئيسية",nav_services:"الخدمات",nav_about:"من نحن",nav_zones:"المناطق",nav_gallery:"المعرض",nav_contact:"اتصل بنا",
+hero_badge:"متوفرون 24 ساعة / 7 أيام",hero_t1:"الأمن والنظافة",hero_t2:"باحترافية عالية",
+hero_sub:"وكالة مرجعية في الأمن الخاص والحراسة والمراقبة بالقنيطرة وفي جميع أنحاء المغرب. حماية شاملة لمقراتكم وأوراشكم ومساكنكم وفعالياتكم.",
+cta_quote:"طلب عرض سعر مجاني",cta_call:"اتصل بنا",s1:"أعوان متوفرون",s2:"مدن مغطاة",s3:"خدمات",s4:"عرض سعر مجاني",
+sv_title:"خدماتنا",sv_sub:"أعوان مؤهلون وخدمة على المقاس لأقصى سرعة في التدخل.",
+sv1t:"الحراسة والأمن الميداني",sv1d:"أعوان مؤهلون حاضرون 24/7 لحماية مقراتكم وممتلكاتكم.",
+sv2t:"المراقبة",sv2d:"مراقبة الأوراش والشركات والإقامات مع جولات وتقارير.",
+sv3t:"أمن الفعاليات",sv3d:"حماية وتنظيم الولوج لمناسباتكم وأعراسكم ومؤتمراتكم.",
+sv4t:"التنظيف المهني",sv4d:"تنظيف المكاتب والعمارات والفضاءات المهنية بمعدات مناسبة.",
+sv5t:"الصيانة",sv5d:"صيانة منتظمة للمنازل والإقامات والمجمعات السكنية.",
+sv6t:"التعقيم",sv6d:"تعقيم ومكافحة الفيروسات لبيئة آمنة ونظيفة.",
+ab_title:"لماذا تختارنا",ab_text:"تؤمّن Gardiumayoub Malak SARL حماية شاملة لمصالحكم بفضل أعوان مؤهلين ومتوفرين في كل وقت. استفيدوا من سرعة تدخل قصوى وخدمة على المقاس.",
+ab1:"أعوان مؤهلون ومكوَّنون",ab2:"متوفرون 24 ساعة / 7 أيام",ab3:"خدمة على المقاس",ab4:"عرض سعر مجاني وسريع",
+zn_title:"مناطق التدخل",zn_sub:"نتدخل في كبريات مدن المغرب.",
+hr_title:"أوقات العمل",hr_sub:"فريق جاهز دائماً، ليلاً ونهاراً.",hr_head:"مفتوح 24 ساعة",
+gl_title:"المعرض",gl_sub:"فرقنا أثناء العمل في الميدان.",gl_soon:"صورة / فيديو قريباً",
+ct_title:"تواصل معنا",ct_sub:"اطلب عرض السعر المجاني اليوم.",ct_tel:"هاتف / واتساب",ct_addr:"العنوان",
+f_name:"الاسم الكامل",f_phone:"رقم الهاتف",f_service:"الخدمة المطلوبة",f_msg:"الرسالة",f_send:"إرسال عبر واتساب",
+fq_title:"المساعد",fq_hello:"مرحباً! اطرح سؤالك:",
+q1:"أوقات العمل؟",a1:"نحن متوفرون 24 ساعة / 7 أيام، طوال الأسبوع.",
+q2:"المناطق؟",a2:"القنيطرة، الرباط، طنجة، مراكش والدار البيضاء.",
+q3:"عرض السعر؟",a3:"عرض السعر مجاني. راسلنا على واتساب: 82 24 08 66 6 212+.",
+q4:"الخدمات؟",a4:"الحراسة، المراقبة، أمن الفعاليات، التنظيف، الصيانة والتعقيم.",
+cm_title:"التزاماتنا",cm_sub:"ما يمكنكم انتظاره منا كل يوم.",c1t:"متوفرون 24 ساعة / 7 أيام",c1d:"فريق جاهز للتدخل ليلاً ونهاراً.",c2t:"أعوان مؤهلون",c2d:"أعوان مكوَّنون لحماية مقراتكم وأوراشكم ومساكنكم.",c3t:"سرعة تدخل قصوى",c3d:"تدخل سريع كلما احتجتم إلينا.",c4t:"عرض سعر مجاني",c4d:"تواصلوا معنا اليوم دون أي التزام.",c5t:"خدمة على المقاس",c5d:"خدمات مناسبة لموقعكم واحتياجاتكم.",c6t:"في كل أنحاء المغرب",c6d:"القنيطرة، الرباط، طنجة، مراكش والدار البيضاء.",nav_reviews:"الآراء",rv_title:"آراء عملائنا",rv_sub:"ثقة عملائنا هي أفضل ضمان لنا.",rv_empty:"رأي زبون قريباً",rv_form:"اترك رأيك",rv_name:"اسمك",rv_text:"رأيك",rv_send:"إرسال رأيي",ft:"جميع الحقوق محفوظة."},
+en:{nav_home:"Home",nav_services:"Services",nav_about:"About",nav_zones:"Areas",nav_gallery:"Gallery",nav_contact:"Contact",
+hero_badge:"Available 24/7",hero_t1:"Security & Cleaning",hero_t2:"Done Professionally",
+hero_sub:"Your reference agency for private security, guarding and surveillance in Kenitra and across Morocco. Complete protection for your premises, sites, residences and events.",
+cta_quote:"Free quote",cta_call:"Call us",s1:"Agents available",s2:"Cities covered",s3:"Services",s4:"Free quote",
+sv_title:"Our Services",sv_sub:"Qualified agents and tailor-made service for maximum responsiveness.",
+sv1t:"Guarding & physical security",sv1d:"Qualified agents on duty 24/7 to protect your premises and assets.",
+sv2t:"Surveillance",sv2d:"Monitoring of construction sites, companies and residences, with patrols and reports.",
+sv3t:"Event security",sv3d:"Protection and access control for your events, weddings and conferences.",
+sv4t:"Professional cleaning",sv4d:"Cleaning of offices, buildings and business spaces with suitable equipment.",
+sv5t:"Maintenance",sv5d:"Regular upkeep of homes, residences and housing complexes.",
+sv6t:"Disinfection",sv6d:"Disinfection and virus control for a safe and clean environment.",
+ab_title:"Why choose us",ab_text:"Gardiumayoub Malak SARL provides complete protection of your interests with qualified agents available at all times. Enjoy maximum responsiveness and tailor-made service.",
+ab1:"Qualified, trained agents",ab2:"Available 24/7",ab3:"Tailor-made service",ab4:"Free and fast quote",
+zn_title:"Service areas",zn_sub:"We operate in Morocco's main cities.",
+hr_title:"Opening hours",hr_sub:"A team always ready, day and night.",hr_head:"Open 24 hours",
+gl_title:"Gallery",gl_sub:"Our teams in action in the field.",gl_soon:"Photo / video coming soon",
+ct_title:"Contact us",ct_sub:"Request your free quote today.",ct_tel:"Phone / WhatsApp",ct_addr:"Address",
+f_name:"Full name",f_phone:"Phone",f_service:"Service needed",f_msg:"Message",f_send:"Send via WhatsApp",
+fq_title:"Assistant",fq_hello:"Hello! Ask me a question:",
+q1:"Opening hours?",a1:"We are open 24 hours a day, 7 days a week.",
+q2:"Areas covered?",a2:"Kenitra, Rabat, Tangier, Marrakech and Casablanca.",
+q3:"Quote?",a3:"Quotes are free. Message us on WhatsApp at +212 6 66 08 24 82.",
+q4:"Services?",a4:"Guarding, surveillance, event security, cleaning, maintenance and disinfection.",
+cm_title:"Our commitments",cm_sub:"What you can expect from us, every day.",c1t:"Available 24/7",c1d:"A team ready to act day and night.",c2t:"Qualified agents",c2d:"Trained agents to protect your premises, sites and residences.",c3t:"Maximum responsiveness",c3d:"Fast intervention whenever you need us.",c4t:"Free quote",c4d:"Contact us today, no obligation.",c5t:"Tailor-made service",c5d:"Services adapted to your site and needs.",c6t:"Across Morocco",c6d:"Kenitra, Rabat, Tangier, Marrakech and Casablanca.",nav_reviews:"Reviews",rv_title:"Customer reviews",rv_sub:"Our clients' trust is our best security.",rv_empty:"Customer review coming soon",rv_form:"Leave your review",rv_name:"Your name",rv_text:"Your review",rv_send:"Send my review",ft:"All rights reserved."},
+es:{nav_home:"Inicio",nav_services:"Servicios",nav_about:"Nosotros",nav_zones:"Zonas",nav_gallery:"Galería",nav_contact:"Contacto",
+hero_badge:"Disponibles 24h / 7 días",hero_t1:"Seguridad y Limpieza",hero_t2:"Profesionales",
+hero_sub:"Agencia de referencia en seguridad privada, vigilancia y control en Kenitra y en todo Marruecos. Protección global de sus locales, obras, residencias y eventos.",
+cta_quote:"Presupuesto gratis",cta_call:"Llámenos",s1:"Agentes disponibles",s2:"Ciudades",s3:"Servicios",s4:"Presupuesto gratis",
+sv_title:"Nuestros Servicios",sv_sub:"Agentes cualificados y servicio a medida para la máxima rapidez de respuesta.",
+sv1t:"Vigilancia y seguridad física",sv1d:"Agentes cualificados 24h/24 y 7 días para proteger sus locales y bienes.",
+sv2t:"Control y supervisión",sv2d:"Supervisión de obras, empresas y residencias, con rondas e informes.",
+sv3t:"Seguridad para eventos",sv3d:"Protección y control de accesos para eventos, bodas y conferencias.",
+sv4t:"Limpieza profesional",sv4d:"Limpieza de oficinas, edificios y espacios profesionales con equipos adecuados.",
+sv5t:"Mantenimiento",sv5d:"Mantenimiento regular de viviendas, residencias y comunidades.",
+sv6t:"Desinfección",sv6d:"Desinfección y control de virus para un entorno seguro y limpio.",
+ab_title:"Por qué elegirnos",ab_text:"Gardiumayoub Malak SARL garantiza la protección global de sus intereses con agentes cualificados y disponibles en todo momento. Máxima rapidez y servicio a medida.",
+ab1:"Agentes cualificados y formados",ab2:"Disponibles 24h / 7 días",ab3:"Servicio a medida",ab4:"Presupuesto gratis y rápido",
+zn_title:"Zonas de servicio",zn_sub:"Trabajamos en las principales ciudades de Marruecos.",
+hr_title:"Horario",hr_sub:"Un equipo siempre listo, de día y de noche.",hr_head:"Abierto 24 horas",
+gl_title:"Galería",gl_sub:"Nuestros equipos en acción sobre el terreno.",gl_soon:"Foto / vídeo próximamente",
+ct_title:"Contáctenos",ct_sub:"Solicite hoy su presupuesto gratuito.",ct_tel:"Teléfono / WhatsApp",ct_addr:"Dirección",
+f_name:"Nombre completo",f_phone:"Teléfono",f_service:"Servicio deseado",f_msg:"Mensaje",f_send:"Enviar por WhatsApp",
+fq_title:"Asistente",fq_hello:"¡Hola! Hágame una pregunta:",
+q1:"¿Horario?",a1:"Abrimos las 24 horas, los 7 días de la semana.",
+q2:"¿Zonas?",a2:"Kenitra, Rabat, Tánger, Marrakech y Casablanca.",
+q3:"¿Presupuesto?",a3:"El presupuesto es gratuito. Escríbanos por WhatsApp al +212 6 66 08 24 82.",
+q4:"¿Servicios?",a4:"Vigilancia, control, seguridad de eventos, limpieza, mantenimiento y desinfección.",
+cm_title:"Nuestros compromisos",cm_sub:"Lo que puede esperar de nosotros cada día.",c1t:"Disponibles 24h / 7 días",c1d:"Un equipo listo para actuar de día y de noche.",c2t:"Agentes cualificados",c2d:"Agentes formados para proteger sus locales, obras y residencias.",c3t:"Máxima rapidez",c3d:"Intervención rápida cuando nos necesite.",c4t:"Presupuesto gratis",c4d:"Contáctenos hoy, sin compromiso.",c5t:"Servicio a medida",c5d:"Servicios adaptados a su sitio y sus necesidades.",c6t:"En todo Marruecos",c6d:"Kenitra, Rabat, Tánger, Marrakech y Casablanca.",nav_reviews:"Opiniones",rv_title:"Opiniones de clientes",rv_sub:"La confianza de nuestros clientes es nuestra mejor seguridad.",rv_empty:"Opinión de cliente próximamente",rv_form:"Deja tu opinión",rv_name:"Tu nombre",rv_text:"Tu opinión",rv_send:"Enviar mi opinión",ft:"Todos los derechos reservados."},
+it:{nav_home:"Home",nav_services:"Servizi",nav_about:"Chi siamo",nav_zones:"Zone",nav_gallery:"Galleria",nav_contact:"Contatti",
+hero_badge:"Disponibili 24h su 24 – 7 giorni",hero_t1:"Sicurezza e Pulizia",hero_t2:"Professionali",
+hero_sub:"Agenzia di riferimento per sicurezza privata, vigilanza e sorveglianza a Kenitra e in tutto il Marocco. Protezione globale di locali, cantieri, residenze ed eventi.",
+cta_quote:"Preventivo gratuito",cta_call:"Chiamaci",s1:"Agenti disponibili",s2:"Città coperte",s3:"Servizi",s4:"Preventivo gratuito",
+sv_title:"I Nostri Servizi",sv_sub:"Agenti qualificati e servizio su misura per la massima reattività.",
+sv1t:"Vigilanza e sicurezza fisica",sv1d:"Agenti qualificati 24h su 24, 7 giorni su 7, per proteggere locali e beni.",
+sv2t:"Sorveglianza",sv2d:"Sorveglianza di cantieri, aziende e residenze, con ronde e rapporti.",
+sv3t:"Sicurezza eventi",sv3d:"Protezione e controllo accessi per eventi, matrimoni e conferenze.",
+sv4t:"Pulizia professionale",sv4d:"Pulizia di uffici, edifici e spazi professionali con attrezzature adeguate.",
+sv5t:"Manutenzione",sv5d:"Manutenzione regolare di case, residenze e condomini.",
+sv6t:"Disinfezione",sv6d:"Disinfezione e lotta ai virus per un ambiente sicuro e pulito.",
+ab_title:"Perché sceglierci",ab_text:"Gardiumayoub Malak SARL garantisce la protezione globale dei vostri interessi con agenti qualificati e sempre disponibili. Massima reattività e servizio su misura.",
+ab1:"Agenti qualificati e formati",ab2:"Disponibili 24h su 24 – 7 giorni",ab3:"Servizio su misura",ab4:"Preventivo gratuito e rapido",
+zn_title:"Zone di intervento",zn_sub:"Operiamo nelle principali città del Marocco.",
+hr_title:"Orari",hr_sub:"Un team sempre pronto, giorno e notte.",hr_head:"Aperto 24 ore",
+gl_title:"Galleria",gl_sub:"I nostri team in azione sul campo.",gl_soon:"Foto / video in arrivo",
+ct_title:"Contattaci",ct_sub:"Richiedi oggi il tuo preventivo gratuito.",ct_tel:"Telefono / WhatsApp",ct_addr:"Indirizzo",
+f_name:"Nome completo",f_phone:"Telefono",f_service:"Servizio richiesto",f_msg:"Messaggio",f_send:"Invia su WhatsApp",
+fq_title:"Assistente",fq_hello:"Ciao! Fammi una domanda:",
+q1:"Orari?",a1:"Siamo aperti 24 ore su 24, 7 giorni su 7.",
+q2:"Zone coperte?",a2:"Kenitra, Rabat, Tangeri, Marrakech e Casablanca.",
+q3:"Preventivo?",a3:"Il preventivo è gratuito. Scrivici su WhatsApp al +212 6 66 08 24 82.",
+q4:"Servizi?",a4:"Vigilanza, sorveglianza, sicurezza eventi, pulizia, manutenzione e disinfezione.",
+cm_title:"I nostri impegni",cm_sub:"Ciò che potete aspettarvi da noi, ogni giorno.",c1t:"Disponibili 24h su 24 – 7 giorni",c1d:"Un team pronto a intervenire giorno e notte.",c2t:"Agenti qualificati",c2d:"Agenti formati per proteggere locali, cantieri e residenze.",c3t:"Massima reattività",c3d:"Intervento rapido quando ne avete bisogno.",c4t:"Preventivo gratuito",c4d:"Contattateci oggi, senza impegno.",c5t:"Servizio su misura",c5d:"Servizi adatti al vostro sito e alle vostre esigenze.",c6t:"In tutto il Marocco",c6d:"Kenitra, Rabat, Tangeri, Marrakech e Casablanca.",nav_reviews:"Recensioni",rv_title:"Recensioni dei clienti",rv_sub:"La fiducia dei clienti è la nostra migliore sicurezza.",rv_empty:"Recensione in arrivo",rv_form:"Lascia la tua recensione",rv_name:"Il tuo nome",rv_text:"La tua recensione",rv_send:"Invia la mia recensione",ft:"Tutti i diritti riservati."}
+};
+const DAYS={
+fr:["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"],
+ar:["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"],
+en:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+es:["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"],
+it:["Domenica","Lunedì","Martedì","Mercoledì","Giovedì","Venerdì","Sabato"]};
+let L="ar";
+
+function setLang(l){
+  L=l; const d=T[l];
+  document.documentElement.lang=l; document.documentElement.dir=(l==="ar")?"rtl":"ltr";
+  document.querySelectorAll("[data-i]").forEach(e=>{e.textContent=d[e.dataset.i]});
+  document.querySelectorAll("#langs button").forEach(b=>b.classList.toggle("on",b.dataset.l===l));
+  const box=document.getElementById("hoursBox"), today=new Date().getDay();
+  box.querySelectorAll(".r").forEach(r=>r.remove());
+  DAYS[l].forEach((n,i)=>{
+    const r=document.createElement("div"); r.className="r"+(i===today?" today":"");
+    r.innerHTML=`<span>${n}</span><em>24 h / 24</em>`; box.appendChild(r);
+  });
+  buildChat(); renderReviews();
+  try{localStorage.setItem("gm_lang",l)}catch(e){}
+}
+document.getElementById("langs").addEventListener("click",e=>{const b=e.target.closest("button");if(b)setLang(b.dataset.l)});
+
+/* ================= CHAT FAQ ================= */
+function buildChat(){
+  const cb=document.getElementById("cb"), qs=document.getElementById("qs"), d=T[L];
+  cb.innerHTML=""; qs.innerHTML="";
+  add(d.fq_hello,"bot");
+  [1,2,3,4].forEach(n=>{
+    const b=document.createElement("button"); b.textContent=d["q"+n];
+    b.onclick=()=>{add(d["q"+n],"me");setTimeout(()=>add(d["a"+n],"bot"),350)};
+    qs.appendChild(b);
+  });
+}
+function add(t,w){
+  const cb=document.getElementById("cb"), m=document.createElement("div");
+  m.className="msg "+w; m.textContent=t; cb.appendChild(m); cb.scrollTop=cb.scrollHeight;
+}
+document.getElementById("botbtn").onclick=()=>document.getElementById("chat").classList.toggle("open");
+
+/* ================= FORMULARIO -> WHATSAPP ================= */
+document.getElementById("form").addEventListener("submit",e=>{
+  e.preventDefault();
+  const msg=`Gardiumayoub Malak SARL\n${T[L].f_name}: ${fn.value}\n${T[L].f_phone}: ${fp.value}\n${T[L].f_service}: ${fs.value}\n${T[L].f_msg}: ${fm.value}`;
+  window.open("https://wa.me/212666082482?text="+encodeURIComponent(msg),"_blank");
+});
+
+/* ================= UI ================= */
+const hd=document.getElementById("hd");
+addEventListener("scroll",()=>hd.classList.toggle("sc",scrollY>40));
+document.getElementById("burger").onclick=()=>document.getElementById("nav").classList.toggle("open");
+document.querySelectorAll("nav a").forEach(a=>a.onclick=()=>document.getElementById("nav").classList.remove("open"));
+
+// reveal + counters
+const io=new IntersectionObserver(es=>es.forEach(x=>{
+  if(x.isIntersecting){
+    x.target.classList.add("in");
+    const c=x.target.querySelector("[data-count]");
+    if(c&&!c.done){c.done=1;const to=+c.dataset.count;let n=0;const t=setInterval(()=>{n++;c.textContent=n;if(n>=to)clearInterval(t)},160)}
+    io.unobserve(x.target);
+  }
+}),{threshold:.15});
+document.querySelectorAll(".rv").forEach(e=>io.observe(e));
+
+// 3D tilt cards
+document.querySelectorAll(".card").forEach(c=>{
+  c.addEventListener("mousemove",e=>{
+    const r=c.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+    c.style.transform=`rotateY(${x*18}deg) rotateX(${-y*18}deg) translateZ(10px)`;
+  });
+  c.addEventListener("mouseleave",()=>c.style.transform="");
+});
+
+// gallery slots (fotos / vídeos reales)
+document.querySelectorAll(".slot").forEach(s=>{
+  const src=s.dataset.src; if(!src)return;
+  const el=document.createElement(s.dataset.type==="video"?"video":"img");
+  el.src=src;
+  if(el.tagName==="VIDEO"){el.controls=true;el.muted=true;el.playsInline=true}
+  s.innerHTML=""; s.classList.add("has"); s.appendChild(el);
+});
+
+/* ================= THREE.JS : ESCUDO 3D ================= */
+(function(){
+  const canvas=document.getElementById("shield3d"), stage=canvas.parentElement;
+  if(!window.THREE){document.getElementById("fb").style.display="flex";canvas.style.display="none";return}
+  let renderer;
+  try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true})}
+  catch(e){document.getElementById("fb").style.display="flex";canvas.style.display="none";return}
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  const scene=new THREE.Scene();
+  const cam=new THREE.PerspectiveCamera(38,1,.1,100); cam.position.set(0,0,8.2);
+
+  scene.add(new THREE.AmbientLight(0xffffff,.55));
+  const dl=new THREE.DirectionalLight(0xffffff,1.1); dl.position.set(3,4,6); scene.add(dl);
+  const pl=new THREE.PointLight(0xd9b24c,1.6,20); pl.position.set(-4,-2,4); scene.add(pl);
+  const pl2=new THREE.PointLight(0x0b9a62,.8,20); pl2.position.set(4,2,3); scene.add(pl2);
+
+  function half(sign,k=1){
+    const s=new THREE.Shape();
+    s.moveTo(0,1.25*k);
+    s.lineTo(1.0*sign*k,.98*k);
+    s.lineTo(1.0*sign*k,.1*k);
+    s.bezierCurveTo(1.0*sign*k,-.7*k,.5*sign*k,-1.2*k,0,-1.48*k);
+    s.lineTo(0,1.25*k);
+    return s;
+  }
+  const ext={depth:.28,bevelEnabled:true,bevelSize:.05,bevelThickness:.06,bevelSegments:4,curveSegments:24};
+  const group=new THREE.Group(); scene.add(group);
+
+  const gold=new THREE.MeshStandardMaterial({color:0xd9b24c,metalness:.9,roughness:.25});
+  const red=new THREE.MeshStandardMaterial({color:0xc8102e,metalness:.35,roughness:.4});
+  const green=new THREE.MeshStandardMaterial({color:0x0b9a62,metalness:.35,roughness:.4});
+  const navy=new THREE.MeshStandardMaterial({color:0x0b1226,metalness:.5,roughness:.5});
+
+  // marco dorado
+  const frameL=new THREE.Mesh(new THREE.ExtrudeGeometry(half(-1,1.14),{...ext,depth:.2}),gold);
+  const frameR=new THREE.Mesh(new THREE.ExtrudeGeometry(half(1,1.14),{...ext,depth:.2}),gold);
+  frameL.position.z=frameR.position.z=-.08;
+  // fondo oscuro
+  const mid=[new THREE.Mesh(new THREE.ExtrudeGeometry(half(-1,1.07),{...ext,depth:.24}),navy),
+             new THREE.Mesh(new THREE.ExtrudeGeometry(half(1,1.07),{...ext,depth:.24}),navy)];
+  mid.forEach(m=>m.position.z=-.02);
+  const mL=new THREE.Mesh(new THREE.ExtrudeGeometry(half(-1,.95),ext),red);
+  const mR=new THREE.Mesh(new THREE.ExtrudeGeometry(half(1,.95),ext),green);
+  mL.position.z=.04; mR.position.z=.04;
+  group.add(frameL,frameR,...mid,mL,mR);
+
+  // emblema GM
+  function tex(){
+    const c=document.createElement("canvas"); c.width=c.height=256; const x=c.getContext("2d");
+    x.lineWidth=16; x.strokeStyle="#0b1226"; x.beginPath(); x.arc(128,128,96,0,7); x.stroke();
+    x.lineWidth=5; x.strokeStyle="#f4dc94"; x.beginPath(); x.arc(128,128,108,0,7); x.stroke();
+    x.fillStyle="#f4dc94"; x.font="900 96px Cinzel, serif"; x.textAlign="center"; x.textBaseline="middle";
+    x.shadowColor="#000"; x.shadowBlur=10; x.fillText("GM",128,138);
+    const t=new THREE.CanvasTexture(c); return t;
+  }
+  const emblemMat=new THREE.MeshBasicMaterial({map:tex(),transparent:true});
+  const e1=new THREE.Mesh(new THREE.PlaneGeometry(1.5,1.5),emblemMat); e1.position.set(0,.1,.42);
+  const e2=e1.clone(); e2.rotation.y=Math.PI; e2.position.z=-.22;
+  group.add(e1,e2);
+  // refresca textura cuando carga la fuente
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{emblemMat.map=tex();emblemMat.needsUpdate=true});
+
+  // anillos dorados (elipse como en el logo)
+  const ringGeo=new THREE.TorusGeometry(1.95,.07,20,120);
+  const ring=new THREE.Mesh(ringGeo,gold); ring.scale.set(1,1.18,1);
+  const ring2=new THREE.Mesh(new THREE.TorusGeometry(1.8,.025,12,120),gold); ring2.scale.set(1,1.18,1);
+  group.add(ring,ring2);
+
+  // escudo como insignia en la esquina + halo dorado alrededor de la foto
+  let baseY=-1.75;
+  group.scale.setScalar(.4); group.position.set(-1.95,baseY,1.4);
+  const halo=new THREE.Group(); halo.scale.setScalar(1.05); scene.add(halo); halo.add(ring,ring2);
+
+  // FOTO 3D con marco dorado
+  const PHOTO="https://i.imgur.com/VswKYKE.jpeg";
+  const photo=new THREE.Group(); photo.position.z=.5; photo.scale.setScalar(.001); scene.add(photo);
+  photo.userData.on=false;
+  new THREE.TextureLoader().setCrossOrigin("anonymous").load(PHOTO,tex=>{
+    const a=tex.image.width/tex.image.height;
+    let w=2.6,h=w/a; if(h>3.0){h=3.0;w=h*a}
+    const frame=new THREE.Mesh(new THREE.BoxGeometry(w+.24,h+.24,.2),gold);
+    const inner=new THREE.Mesh(new THREE.BoxGeometry(w+.08,h+.08,.22),navy);
+    const pic=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshBasicMaterial({map:tex}));
+    pic.position.z=.115; inner.position.z=0;
+    const back=pic.clone(); back.rotation.y=Math.PI; back.position.z=-.115;
+    photo.add(frame,inner,pic,back);
+    photo.userData.on=true;
+  },undefined,()=>{ // si el navegador bloquea la textura, se muestra la foto en 2D sobre la escena
+    document.getElementById("fb").style.display="flex";
+  });
+
+  // partículas doradas
+  const N=260, pos=new Float32Array(N*3);
+  for(let i=0;i<N;i++){const a=Math.random()*6.28,r=2.4+Math.random()*2.2;pos[i*3]=Math.cos(a)*r;pos[i*3+1]=(Math.random()-.5)*5;pos[i*3+2]=Math.sin(a)*r}
+  const pg=new THREE.BufferGeometry(); pg.setAttribute("position",new THREE.BufferAttribute(pos,3));
+  const pts=new THREE.Points(pg,new THREE.PointsMaterial({color:0xf4dc94,size:.05,transparent:true,opacity:.85}));
+  scene.add(pts);
+
+  function resize(){
+    const w=stage.clientWidth,h=stage.clientHeight;
+    renderer.setSize(w,h,false); cam.aspect=w/h; cam.updateProjectionMatrix();
+  }
+  addEventListener("resize",resize); resize();
+
+  let mx=0,my=0;
+  addEventListener("mousemove",e=>{mx=(e.clientX/innerWidth-.5);my=(e.clientY/innerHeight-.5)});
+  addEventListener("deviceorientation",e=>{if(e.gamma!=null){mx=e.gamma/60;my=(e.beta-45)/90}});
+
+  const clock=new THREE.Clock(); let vis=true;
+  new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(stage);
+  (function loop(){
+    requestAnimationFrame(loop); if(!vis)return;
+    const t=clock.getElapsedTime();
+    group.rotation.y+=((Math.sin(t*.7)*.7+mx*.9)-group.rotation.y)*.06;
+    group.rotation.x+=((my*.5)-group.rotation.x)*.06;
+    group.position.y=baseY+Math.sin(t*1.4)*.08;
+    group.rotation.y=t*.9; // la insignia gira sola
+    if(photo.userData.on){
+      const s=photo.scale.x; photo.scale.setScalar(s+(1-s)*.07);
+      photo.rotation.y+=((Math.sin(t*.6)*.18+mx*.6)-photo.rotation.y)*.06;
+      photo.rotation.x+=((my*.35)-photo.rotation.x)*.06;
+      photo.position.y=Math.sin(t*1.1)*.08;
+    }
+    ring.rotation.z=t*.15; ring2.rotation.z=-t*.2;
+    pts.rotation.y=t*.12;
+    renderer.render(scene,cam);
+  })();
+})();
+
+/* ================= FONDO DE PARTÍCULAS 2D ================= */
+(function(){
+  const c=document.getElementById("bgcanvas"),x=c.getContext("2d");let w,h,P=[];
+  function rs(){w=c.width=innerWidth;h=c.height=innerHeight;P=Array.from({length:Math.min(70,w/18|0)},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.8+.4,v:Math.random()*.35+.08,a:Math.random()}))}
+  addEventListener("resize",rs);rs();
+  (function d(){x.clearRect(0,0,w,h);P.forEach(p=>{p.y-=p.v;if(p.y<0){p.y=h;p.x=Math.random()*w}
+    x.fillStyle=`rgba(217,178,76,${.15+p.a*.45})`;x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fill()});requestAnimationFrame(d)})();
+})();
+
+
+// galería: tilt 3D + lightbox
+(function(){
+  const items=[...document.querySelectorAll(".pf")], lb=document.getElementById("lb"), im=document.getElementById("lbi"), cn=document.getElementById("lbc");
+  let k=0;
+  const show=i=>{k=(i+items.length)%items.length;im.src=items[k].querySelector("img").src;cn.textContent=(k+1)+" / "+items.length};
+  items.forEach((f,i)=>{
+    f.addEventListener("click",()=>{show(i);lb.classList.add("open")});
+    f.addEventListener("mousemove",e=>{const r=f.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;f.style.transform=`rotateY(${x*12}deg) rotateX(${-y*12}deg) translateZ(8px)`});
+    f.addEventListener("mouseleave",()=>f.style.transform="");
+  });
+  const close=()=>lb.classList.remove("open");
+  lb.querySelector(".x").onclick=close;
+  lb.querySelector(".pv").onclick=e=>{e.stopPropagation();show(k-1)};
+  lb.querySelector(".nx").onclick=e=>{e.stopPropagation();show(k+1)};
+  lb.addEventListener("click",e=>{if(e.target===lb)close()});
+  addEventListener("keydown",e=>{if(!lb.classList.contains("open"))return;if(e.key==="Escape")close();if(e.key==="ArrowRight")show(k+1);if(e.key==="ArrowLeft")show(k-1)});
+  let sx=0;lb.addEventListener("touchstart",e=>sx=e.touches[0].clientX);
+  lb.addEventListener("touchend",e=>{const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>50)show(d<0?k+1:k-1)});
+})();
+
+
+/* ================= RESEÑAS ================= */
+// Pega aquí reseñas REALES de clientes (Google, WhatsApp...). Mientras no haya ninguna, la sección de reseñas permanece oculta.
+// Ejemplo: {name:"Nombre del cliente", stars:5, text:"Texto real de la reseña", date:"10/2026"}
+const REVIEWS=[null,null,null,null,null,null];
+let rating=5;
+function renderReviews(){
+  const g=document.getElementById("rvgrid"), sec=document.getElementById("reviews"); if(!g)return; g.innerHTML="";
+  const real=REVIEWS.filter(Boolean).slice(0,6);
+  const nl=document.querySelector('nav a[href="#reviews"]');
+  sec.style.display=real.length?"":"none"; if(nl)nl.parentElement.style.display=real.length?"":"none";
+  real.forEach(r=>{
+    const c=document.createElement("article");
+    c.className="rvc in";
+    c.innerHTML=`<span class="q">“</span><div class="st">${"★".repeat(r.stars||5)}${"☆".repeat(5-(r.stars||5))}</div><p></p><div class="who"><div class="av"></div><div><b></b><br><small></small></div></div>`;
+    c.querySelector("p").textContent=r.text; c.querySelector("b").textContent=r.name;
+    c.querySelector("small").textContent=r.date||""; c.querySelector(".av").textContent=(r.name||"?")[0].toUpperCase();
+    g.appendChild(c);
+  });
+  document.querySelectorAll("[data-ph]").forEach(e=>e.placeholder=T[L][e.dataset.ph]);
+}
+// tilt 3D en tarjetas de reseñas y compromisos
+document.addEventListener("mousemove",e=>{
+  const c=e.target.closest&&e.target.closest(".rvc"); if(!c)return;
+  const b=c.getBoundingClientRect(),x=(e.clientX-b.left)/b.width-.5,y=(e.clientY-b.top)/b.height-.5;
+  c.style.transform=`rotateY(${x*16}deg) rotateX(${-y*16}deg) translateZ(8px)`;
+});
+document.addEventListener("mouseout",e=>{const c=e.target.closest&&e.target.closest(".rvc");if(c&&!c.contains(e.relatedTarget))c.style.transform=""});
+(function(){
+  const box=document.getElementById("rvstars");
+  for(let i=1;i<=5;i++){const b=document.createElement("button");b.type="button";b.textContent="★";b.setAttribute("aria-label",i);b.onclick=()=>{rating=i;paint()};box.appendChild(b)}
+  function paint(){[...box.children].forEach((b,i)=>b.classList.toggle("on",i<rating))}
+  paint();
+  document.getElementById("rvform").addEventListener("submit",e=>{
+    e.preventDefault();
+    const msg=`Gardiumayoub Malak SARL\n${"⭐".repeat(rating)}\n${rn.value}\n${rt.value}`;
+    window.open("https://wa.me/212666082482?text="+encodeURIComponent(msg),"_blank");
+  });
+})();
+
+// init
+let init="ar"; try{init=localStorage.getItem("gm_lang")||"ar"}catch(e){}
+setLang(T[init]?init:"ar");
+</script>
+</body>
+</html>
